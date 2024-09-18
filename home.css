@@ -24,8 +24,10 @@
 
 html, body, main{
     width: 100vw;
-    height: 100%;
-    background-color: #ffbb00;
+    height: 100vh;
+    /* background: linear-gradient(90deg,#ffbb00 15%,10%, #344b2a 30%,10%,  #858496 45%,10%,  white); */
+    /* background: linear-gradient(#344b2a 60%,10%,  #858496 45%); */
+    /* background-color: rgb(83, 83, 83); */
     color: rgb(39, 39, 39);
     overscroll-behavior: none;
 }
@@ -33,23 +35,34 @@ html, body, main{
 .container {
     width: 100vw;
     height: 100vh;
-    background-image: url("assets/main-tp.png");
-    background-size:cover;
+    /* background-image: url("assets/main-tp.png");
+    background-size:cover; */
+    /* background: linear-gradient(90deg,rgb(24, 24, 24) 25%, #383838 40%,white, rgb(24, 24, 24) 90%); */
+
+    /* gray and white looks good, top candidate */
+    background: linear-gradient(45deg,rgb(24, 24, 24) 15%, #383838 30%,white 45% 70%, rgb(24, 24, 24) 90%);
+
+}
+
+.main-img {
+    height: inherit;
+    width: inherit;
+    object-fit: cover;
 }
 
 .blog-area {
     position: absolute;
     top: 70%;
-    left: 10%;
+    left: 0%;
     display: flex;
 
 }
 
 .pen-image {
-    background: url("assets/pen.png");
+    background: url("assets/feather-pen.png");
     position: absolute;
-    top: -42%;
-    left: -27%;
+    top: -34%;
+    left: 105%;
     height: 100%;
     width: 64%;
     background-size:contain;
@@ -64,21 +77,41 @@ html, body, main{
     position: relative;
     top:10%;
     left: 15%;
-}
-
-.blog-link > span > a {
-    color: rgb(33, 33, 33);
-    text-decoration: none;
+    background: url(assets/text-bg.jpg);
+    width: 20rem;
+    background-size:contain;
+    padding-top: 2rem;
+    padding-left: 4rem;
+    -webkit-background-clip: text;
+    background-clip: text;
+    
 }
 
 .text1 {
-
+    text-decoration: none;
+    -webkit-text-fill-color: transparent;
 }
 
 .text2 {
+    color:hsla(0 0% 100% / 0.8);
+    text-decoration: none;
     position: relative;
     top: -3.5rem;
     left: 3rem;
+    background: url(assets/text-bg.jpg);
+    background-size:contain;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-position: center;
+}
+
+.text1:hover {
+    text-shadow: 0 0 3px #ffee10;
+}
+
+.text2:hover {
+    text-shadow: 0 0 3px #ffee10;
 }
 
 .hero-text-area {
@@ -87,12 +120,12 @@ html, body, main{
     display: flex;
     flex-direction: column;
     position: absolute;
-    top: 50%;
-    left: 85%;
+    top: 30%;
+    left: 46%;
 }
 
 .hero-text1 {
-    color: #344b2a;
+    color: #4b4a2a;
     font-family: "Fugaz One";
     
 }
