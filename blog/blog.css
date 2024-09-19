@@ -144,17 +144,22 @@ section{
 
 
 #fullpage {
-    display: none;
-    position: absolute;
+    display: flex;
     z-index: 100;
-    top: 0;
-    left: 0;
     width: 100vw;
     height: 100vh;
-    background-size: contain;
+    background-color: black;
+    opacity: 80%;
+    justify-content: center;
+}
+
+.blog-post-container {
+    width: 80vw;
+    height: 100vh;
+    background-size: cover;
     background-repeat: no-repeat no-repeat;
     background-position: center center;
-    background-color: black;
+    filter: blur(8px);
 }
 
 button {

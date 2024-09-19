@@ -1,6 +1,7 @@
 const posts = document.querySelectorAll(".img");
 const stickyContainer = document.getElementById("sticky-container");
 const fullPage = document.querySelector('#fullpage');
+const blogPostContainer = document.querySelector('#blog-post-container');
 const backButton = document.getElementById("back-button");
 
 posts.forEach(function(post) {
@@ -17,8 +18,8 @@ function transformPostsTrack(selImage) {
 
     stickyContainer.style.display = "none";
 
-    fullPage.style.backgroundImage = 'url(' + selImage + ')';
-    fullPage.style.display = 'block';
+    blogPostContainer.style.backgroundImage = 'url(' + selImage + ')';
+    fullPage.style.display = 'flex';
 
     backButton.style.display = 'block';
 
