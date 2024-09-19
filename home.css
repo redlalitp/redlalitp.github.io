@@ -22,13 +22,18 @@
     box-sizing: border-box;
   }
 
-html, body, main{
+html{
     width: 100vw;
     height: 100vh;
     color: rgb(39, 39, 39);
     overscroll-behavior: none;
-    background: linear-gradient(45deg,rgb(24, 24, 24) 15%, #383838 30%,white 45% 70%, rgb(24, 24, 24) 90%);
-    /* background: linear-gradient(45deg,#020B07 15%, #082F1F 30%,white 45% 70%, #020B07 90%); */
+    /*grey background*/
+    /* background: linear-gradient(45deg,rgb(24, 24, 24) 15%, #383838 30%,white 45% 70%, rgb(24, 24, 24) 90%); */
+
+    /*green background*/
+    background: linear-gradient(45deg,#020B07 15%, #052015 30%,white 45% 70%, #020B07 90%);
+
+    filter : grayscale(100%);
 }
 
 .container {
@@ -36,7 +41,7 @@ html, body, main{
     height: 100vh;
     background-image: url("assets/main-tp.png");
     background-size:cover;
-    filter : grayscale(100%);
+    /* filter : grayscale(100%); */
 }
 
 .main-img {
@@ -143,7 +148,7 @@ html, body, main{
 
 .social-media-links {
     position: absolute;
-    top: 115%;
+    top: 120%;
     left: 0%;
     display: flex;
     width: 130px;
@@ -154,6 +159,18 @@ html, body, main{
     width: 2rem;
     height: 2rem;
     text-decoration: none;
+}
+
+.sm-link {
+    filter: grayscale(1);
+    opacity: 70%;
+    transition: transform .8s;
+}
+
+.sm-link:hover {
+    filter: grayscale(0);
+    opacity: 100%;
+    transform: scale(1.1);
 }
 
 .initial-hi-text {

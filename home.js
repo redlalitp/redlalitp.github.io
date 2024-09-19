@@ -26,7 +26,7 @@ hiText.addEventListener("click", function() {
     //     text.style.animationPlayState = "running";
     // }
 
-    document.getElementById('main-container').animate({filter: `grayscale(0%)`}, 
+    document.documentElement.animate({filter: `grayscale(0%)`}, 
         {duration:2000, fill: "forwards"});
 
     
