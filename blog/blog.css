@@ -51,24 +51,38 @@ section{
     /* transform: translate(0%, -50%); */
 }
 
-.scroll-section > img {
+.img {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
     width: 40vw;
     min-width: 200px;
     height: 40vh;
     min-height: 200px;
-    object-fit: cover;
-    object-position: center;
+    background-size: cover;
+    background-position: center;
     user-select: none;
     transition: transform .8s;
     filter: grayscale(1);
     z-index: 1;
 }
 
-.scroll-section > img:hover {
+.img:hover {
     transform: scale(1.5);
     box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
     filter: grayscale(0);
     z-index: 2;
+}
+
+.img-title {
+    display: flex;
+    height: 10vh;
+    min-height: 50px;
+    font-size: 1rem;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    justify-content: center;
+    padding: 0.5rem;
 }
 
 .blog-text > *{

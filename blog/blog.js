@@ -25,8 +25,8 @@ let images = [
 ];
 
 images.forEach((img, idx) => {
-    let image = document.createElement("img");
-    image.src = img;
+    let image = document.createElement("div");
+    image.style.backgroundImage = `url(${img})`;
     image.draggable = false;
     image.className = "img";
     image.dataset.postTitle = `title${idx+1}`;
@@ -34,6 +34,10 @@ images.forEach((img, idx) => {
     image.dataset.postDate = `date${idx+1}`;
     image.id = `assets/${idx+1}.jpg`;
     track.appendChild(image);
+    const imageTitle = document.createElement("div");
+    imageTitle.className = "img-title";
+    imageTitle.textContent = eval(image.dataset.postTitle);
+    image.appendChild(imageTitle);
 })
 
 
@@ -50,7 +54,7 @@ function transform(section) {
         // console.log(percentage);
         for(const card of track.getElementsByClassName("img")) {
             card.animate({
-                objectPosition : `${percentage/2}%  -50%`
+                backgroundPosition : `${percentage/2}%  -50%`
             }, {duration:1200, fill: "forwards"})
         }
     }
