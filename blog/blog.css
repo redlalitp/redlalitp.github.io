@@ -6,7 +6,9 @@
 
 html, body, main{
     width: 100vw;
-    height: 100%;
+    height: 100vh;
+    min-height: 550px;
+    min-width: 600px;
     background-color: rgb(23, 23, 23);
     color: white;
     overscroll-behavior: none;
@@ -33,7 +35,7 @@ section{
 
 .sticky-parent {
     /* change this value to adjust horizontal scroll */
-    height: 250vh;
+    height: 300vh;
 }
 
 .scroll-section {
@@ -97,6 +99,39 @@ section{
     width: 100vw;
     align-items: center;
     flex-direction: column;
+    scrollbar-gutter: 5px;
+}
+
+.blog-title-container {
+    position: absolute;
+
+    z-index: 5;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding: 0 5rem;
+    margin-top: 2rem;
+    align-items: center;
+
+    background: url(../assets/text-bg.jpg);
+    background-size:contain;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-repeat: repeat-x;
+}
+
+.blog-title-container-text {
+    color:hsla(0 0% 100% / 0.8);
+    font-size: 4rem;
+    font-family: kalam-light;
+    
+}
+
+.home-icon-size48{
+    text-decoration: none;
+    font-size: 3rem !important;
+    cursor: pointer;
 }
 
 .marathi-title {
@@ -224,7 +259,6 @@ button {
     position: absolute;
     top: 10%;
     left: 10%;
-    z-index: 101;
     background: none;
     border: 0;
     outline: 0;
@@ -237,6 +271,7 @@ button {
     background-size: 64px 64px;
     height: 64px;  
     width: 64px;
+    z-index: 101;
 }
 
 #back-button:hover {
