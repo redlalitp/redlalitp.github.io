@@ -52,7 +52,7 @@ html{
 
 .blog-area {
     position: absolute;
-    top: 70%;
+    bottom: 0%;
     left: 0%;
     display: flex;
     opacity: 0%;
@@ -61,7 +61,7 @@ html{
 .pen-image {
     background: url("assets/feather-pen.png");
     position: absolute;
-    top: -34%;
+    bottom: 34%;
     left: 105%;
     height: 100%;
     width: 64%;
