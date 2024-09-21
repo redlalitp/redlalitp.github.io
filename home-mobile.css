@@ -31,7 +31,7 @@ html{
     /* background: linear-gradient(45deg,rgb(24, 24, 24) 15%, #383838 30%,white 45% 70%, rgb(24, 24, 24) 90%); */
 
     /*green background*/
-    background: linear-gradient(45deg,#020B07 15%, #052015 30%,white 45% 70%, #020B07 90%);
+    background: linear-gradient(135deg,#020B07 15%, #052015 30%,white 45% 80%);
 
     filter : grayscale(100%);
 }
@@ -39,21 +39,28 @@ html{
 .container {
     width: 100vw;
     height: 100vh;
-    background-image: url("assets/main-tp.png");
+    display: flex;
+    /* background-image: url("assets/main-tp-mobile.png");
     background-size:cover;
+    background-repeat: no-repeat;
+    background-position: right; */
     /* filter : grayscale(100%); */
 }
 
 .main-img {
-    height: inherit;
-    width: inherit;
+    position: absolute;
+    bottom: 0;
+    width: 100vw;
     object-fit: cover;
+    height: 75%;
+    align-self: flex-end;
+    object-position: right;
 }
 
 .blog-area {
     position: absolute;
-    bottom: 0%;
-    left: 0%;
+    top: 0%;
+    left: -21%;
     display: flex;
     opacity: 0%;
 }
@@ -61,10 +68,10 @@ html{
 .pen-image {
     background: url("assets/feather-pen.png");
     position: absolute;
-    bottom: 34%;
-    left: 105%;
+    top: 2%;
+    left: 92%;
     height: 100%;
-    width: 64%;
+    width: 27%;
     background-size:contain;
     background-repeat: no-repeat;
 }
@@ -76,7 +83,7 @@ html{
 
 .blog-link {
     font-family: "kalam-light";
-    font-size: 4rem;
+    font-size: 3rem;
     display: flex;
     flex-direction: column;
     position: relative;
@@ -101,7 +108,7 @@ html{
     color:hsla(0 0% 100% / 0.8);
     text-decoration: none;
     position: relative;
-    top: -3.5rem;
+    top: -2.5rem;
     left: 3rem;
     background: url(assets/text-bg.jpg);
     background-size:contain;
@@ -125,8 +132,8 @@ html{
     display: flex;
     flex-direction: column;
     position: absolute;
-    top: 30%;
-    left: 46%;
+    top: 46%;
+    left: 8%;
     opacity: 0%;
 }
 
@@ -177,15 +184,15 @@ html{
     font-family: Arial, Helvetica, sans-serif;
     font-size: 6rem;
     position: absolute;
-    left: 40%;
-    top: 20%;
+    left: 6%;
+    top: 4%;
     cursor: pointer;
 }
 
 .hand-icon {
     position: absolute;
-    left: 47%;
-    top: 32%;
+    left: 30%;
+    top: 15%;
     font-size: 4rem !important;
     color: #4b4a2a;
 
@@ -203,13 +210,13 @@ html{
     }
     80% {
         transform: rotate(-25deg);
-        left: 45%;
-        top: 28%;
+        left: 25%;
+        top: 8%;
     }
     100% {
         transform: rotate(-25deg);
-        left: 45%;
-        top: 28%;
+        left: 25%;
+        top: 8%;
     }
 }
 
