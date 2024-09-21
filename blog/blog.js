@@ -62,14 +62,16 @@ function transform(section) {
 
 var element = document.scrollingElement || document.documentElement;
 
-element.addEventListener('scroll', (e) => {
+element.addEventListener('touchmove', (e) => {
     stickySections.forEach(s=> {
         transform(s)
     })
 })
 
-element.addEventListener('wheel', (e) => {
-    stickySections.forEach(s=> {
-        transform(s)
-    })
-})
+// element.addEventListener('wheel', (e) => {
+//     stickySections.forEach(s=> {
+//         transform(s)
+//     })
+// })
+
+//element.on('touchmove', onScroll);
