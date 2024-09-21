@@ -6,6 +6,7 @@ const backButton = document.getElementById("back-button");
 const blogPostTitleContainer = document.getElementById("blog-post-title-container");
 const blogPostDateContainer = document.getElementById("blog-post-date-container");
 const blogPostTextContainer = document.getElementById("blog-post-text-container");
+const blogPageTitle = document.getElementById("blog-page-title");
 
 posts.forEach(function(post) {
     post.addEventListener("click", function(e) {
@@ -20,6 +21,7 @@ function transformPostsTrack(selImage, post) {
     horizontalScroll = false;
 
     stickyContainer.style.display = "none";
+    blogPageTitle.style.display = "none";
 
     blogPostContainer.style.backgroundImage = 'url(' + selImage + ')';
     blogPostTitleContainer.textContent = eval(post.dataset.postTitle);
@@ -33,32 +35,8 @@ function transformPostsTrack(selImage, post) {
 
 backButton.addEventListener("click", function() {
     stickyContainer.style.display = "block";
+    blogPageTitle.style.display = "flex";
     fullPage.style.display = 'none';
     backButton.style.display = 'none';
     horizontalScroll = true;
 });
-
-
-// function getTitleForPost(postId) {
-//     return eval(postId);
-//     // switch(postId){
-//     //     case 'title1':
-//     //         return title1;
-//     //     case 'title2':
-//     //         return title2;
-//     //     default:
-//     //         return 'no title found';
-//     // }
-// }
-
-// function getTextForPost(postId) {
-//     return eval(postId);
-//     // switch(postId){
-//     //     case 'text1':
-//     //         return text1;
-//     //     case 'text2':
-//     //         return text2;
-//     //     default:
-//     //         return 'no text found';
-//     // }
-// }

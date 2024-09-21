@@ -35,7 +35,7 @@ section{
 
 .sticky-parent {
     /* change this value to adjust horizontal scroll */
-    height: 300vh;
+    height: 200vh;
 }
 
 .scroll-section {
@@ -103,7 +103,7 @@ section{
 }
 
 .blog-title-container {
-    position: absolute;
+    position: fixed;
 
     z-index: 5;
     display: flex;

@@ -14,6 +14,12 @@ html, body, main{
     overscroll-behavior: none;
 }
 
+::-webkit-scrollbar {
+    background: transparent; /* make scrollbar transparent */
+    width: 0px;
+    height: 0px;
+}
+
 h1{
     font-size: 4rem;
 }
@@ -27,7 +33,7 @@ section{
 }
 
 .sticky {
-    overflow: hidden;
+    overflow: scroll;
     position: sticky;
     top: 0;
     height: 100vh;
@@ -35,7 +41,13 @@ section{
 
 .sticky-parent {
     /* change this value to adjust horizontal scroll */
-    height: 300vh;
+    height: 800vh;
+}
+
+.sticky-top-text {
+    overflow: hidden;
+    position: fixed;
+    top: 0;
 }
 
 .scroll-section {
@@ -43,11 +55,10 @@ section{
     top: 0;
     left: 0%;
     height: 100%;
-    width: 200vw;
+    width: 850vw;
     will-change: transform;
     display: flex;
-    gap: 2rem;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
     padding: 0 5vw;
     /* transform: translate(0%, -50%); */
@@ -103,7 +114,7 @@ section{
 }
 
 .blog-title-container {
-    position: absolute;
+    position: fixed;
 
     z-index: 5;
     display: flex;

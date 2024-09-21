@@ -1,5 +1,6 @@
 const track = document.getElementById("posts-track");
 const stickySections = [...document.querySelectorAll('.sticky')];
+let limitScroll = window.innerWidth > 800 ? 100 : 800;
 
 //const footerSection = document.getElementById("footer-container");
 
@@ -45,33 +46,47 @@ function transform(section) {
     if(horizontalScroll) {
         const offsetTop = section.parentElement.offsetTop;
         const scrollSection = section.querySelector('.scroll-section');
-        let percentage = (((window.scrollY) - offsetTop) / window.innerHeight)*100;
-        //percentage *= 0.3;
+        console.log(innerWidth);
+        let percentage = (((window.scrollY || window.screenX) - offsetTop) / 700)*100;
         console.log(percentage);
-        percentage = percentage < 0 ? 0 : percentage>300 ? 300 : percentage;
+        percentage = percentage < 0 ? 0 : percentage > limitScroll ? limitScroll : percentage;
         scrollSection.style.transform = `translate3d(${-(percentage)}vw, 0, 0)`;
 
-        // console.log(percentage);
         for(const card of track.getElementsByClassName("img")) {
             card.animate({
-                backgroundPosition : `${percentage/2}%  -50%`
+                backgroundPosition : `${percentage/(limitScroll/100)}%  -50%`
             }, {duration:1200, fill: "forwards"})
         }
     }
 }
 
-var element = document.scrollingElement || document.documentElement;
+// function transformTouch() {
+//     let percentage = (window.scrollX / window.innerWidth)*100;
+//         percentage = percentage < 0 ? 0 : percentage>300 ? 300 : percentage;
 
-element.addEventListener('touchmove', (e) => {
-    stickySections.forEach(s=> {
-        transform(s)
-    })
-})
+//         for(const card of track.getElementsByClassName("img")) {
+//             card.animate({
+//                 backgroundPosition : `${percentage/2}%  -50%`
+//             }, {duration:1200, fill: "forwards"})
+//         }
+// }
 
-// element.addEventListener('wheel', (e) => {
+ var element = document.scrollingElement || document.documentElement;
+
+// element.addEventListener('touchmove', (e) => {
 //     stickySections.forEach(s=> {
-//         transform(s)
+//         transformTouch(s);
 //     })
 // })
 
-//element.on('touchmove', onScroll);
+element.addEventListener('wheel', (e) => {
+    stickySections.forEach(s=> {
+        transform(s);
+    })
+})
+
+element.addEventListener('scroll', (e) => {
+    stickySections.forEach(s=> {
+        transform(s);
+    })
+})
