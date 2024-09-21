@@ -31,9 +31,14 @@ html{
     /* background: linear-gradient(45deg,rgb(24, 24, 24) 15%, #383838 30%,white 45% 70%, rgb(24, 24, 24) 90%); */
 
     /*green background*/
-    background: linear-gradient(135deg,#020B07 15%, #052015 30%,white 45% 80%);
+    /* background: linear-gradient(white 45%,#051e13 45% 65%,white 65% 100%); */
+    /* background-image: url(assets/blog-text-back1.png); */
+    /* background-image: url(assets/hbhw.png); */
 
     filter : grayscale(100%);
+    background-size: contain;
+    background-position:top;
+    background-repeat: no-repeat;
 }
 
 .container {
@@ -59,7 +64,7 @@ html{
 
 .blog-area {
     position: absolute;
-    top: 0%;
+    top: 45%;
     left: -21%;
     display: flex;
     opacity: 0%;
@@ -68,12 +73,13 @@ html{
 .pen-image {
     background: url("assets/feather-pen.png");
     position: absolute;
-    top: 2%;
-    left: 92%;
+    top: 17%;
+    left: 36%;
     height: 100%;
-    width: 27%;
-    background-size:contain;
+    width: 36%;
+    background-size: contain;
     background-repeat: no-repeat;
+    transform: rotate(72deg);
 }
 
 .pen-image:hover {
@@ -102,6 +108,7 @@ html{
 .text1 {
     text-decoration: none;
     -webkit-text-fill-color: transparent;
+    width: fit-content;
 }
 
 .text2 {
@@ -132,8 +139,8 @@ html{
     display: flex;
     flex-direction: column;
     position: absolute;
-    top: 46%;
-    left: 8%;
+    top: 2%;
+    left: 5%;
     opacity: 0%;
 }
 
@@ -169,16 +176,16 @@ html{
 }
 
 .sm-link {
-    filter: grayscale(1);
-    opacity: 70%;
-    transition: transform .8s;
+    /* filter: grayscale(1); */
+    /* opacity: 70%;
+    transition: transform .8s; */
 }
 
-.sm-link:hover {
+/* .sm-link:hover {
     filter: grayscale(0);
     opacity: 100%;
     transform: scale(1.1);
-}
+} */
 
 .initial-hi-text {
     font-family: Arial, Helvetica, sans-serif;
