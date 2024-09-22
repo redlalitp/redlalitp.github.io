@@ -42,68 +42,69 @@ images.forEach((img, idx) => {
     image.appendChild(imageTitle);
 })
 
-
-function transform(section) {
-    if(horizontalScroll) {
-        const offsetTop = section.parentElement.offsetTop;
-        const scrollSection = section.querySelector('.scroll-section');
-        
-        console.log(window.scrollY);
-        let percentage = (((window.scrollY) - offsetTop) / 700)*100;
-        
-        animate(percentage, scrollSection);
+if(!matchMedia('(hover: none)').matches) {
+    function transform(section) {
+        if(horizontalScroll) {
+            const offsetTop = section.parentElement.offsetTop;
+            const scrollSection = section.querySelector('.scroll-section');
+            
+            console.log(window.scrollY);
+            let percentage = (((window.scrollY) - offsetTop) / 700)*100;
+            
+            animate(percentage, scrollSection);
+        }
     }
+
+    function animate(percentage, scrollSection) {
+        percentage = percentage < 0 ? 0 : percentage > limitScroll ? limitScroll : percentage;
+            
+        scrollSection.style.transform = `translate3d(${-(percentage)}vw, 0, 0)`;
+
+        for(const card of track.getElementsByClassName("img")) {
+            card.animate({
+                backgroundPosition : `${percentage/(limitScroll/100)}%  -50%`
+            }, {duration:1200, fill: "forwards"})
+        }
+    }
+
+
+    var element = document.scrollingElement || document.documentElement;
+
+
+    element.addEventListener('wheel', (e) => {
+        stickySections.forEach(s=> {
+            transform(s);
+        })
+    })
+
+    element.addEventListener('scroll', (e) => {
+        stickySections.forEach(s=> {
+            transform(s);
+        })
+    })
 }
 
-function animate(percentage, scrollSection) {
-    percentage = percentage < 0 ? 0 : percentage > limitScroll ? limitScroll : percentage;
+// let touchScrollPos = 0;
+// let touchStartPosX = 0;
+// window.addEventListener('touchmove', (e) => {
+//     // Different devices give different values with different decimal percentages.
+//     const currentPageX = Math.round(e.changedTouches[0].screenY);
+//     if (touchStartPosX === currentPageX) return;
+//     console.log(currentPageX);
+//     const deltaY = touchStartPosX - currentPageX;
+//     touchScrollPos += deltaY;
+
+//     if ( touchScrollPos < 0) {
+//         touchScrollPos = 0;
+//     } else if(touchScrollPos > 6405){
+//         touchScrollPos = 6405;
+//     }
+
+//     touchStartPosX = currentPageX;
+//     const offsetTop = section.parentElement.offsetTop;
         
-    scrollSection.style.transform = `translate3d(${-(percentage)}vw, 0, 0)`;
-
-    for(const card of track.getElementsByClassName("img")) {
-        card.animate({
-            backgroundPosition : `${percentage/(limitScroll/100)}%  -50%`
-        }, {duration:1200, fill: "forwards"})
-    }
-}
-
-
-var element = document.scrollingElement || document.documentElement;
-
-
-element.addEventListener('wheel', (e) => {
-    stickySections.forEach(s=> {
-        transform(s);
-    })
-})
-
-element.addEventListener('scroll', (e) => {
-    stickySections.forEach(s=> {
-        transform(s);
-    })
-})
-
-let touchScrollPos = 0;
-let touchStartPosX = 0;
-window.addEventListener('touchmove', (e) => {
-    // Different devices give different values with different decimal percentages.
-    const currentPageX = Math.round(e.changedTouches[0].screenY);
-    if (touchStartPosX === currentPageX) return;
-    console.log(currentPageX);
-    const deltaY = touchStartPosX - currentPageX;
-    touchScrollPos += deltaY;
-
-    if ( touchScrollPos < 0) {
-        touchScrollPos = 0;
-    } else if(touchScrollPos > 6405){
-        touchScrollPos = 6405;
-    }
-
-    touchStartPosX = currentPageX;
-    const offsetTop = section.parentElement.offsetTop;
-        
-    console.log(touchScrollPos);
-    let percentage = (((touchScrollPos) - offsetTop) / 700)*100;
-    const scrollSection = document.querySelector('.scroll-section');
-    animate(percentage, scrollSection);
-});
+//     console.log(touchScrollPos);
+//     let percentage = (((touchScrollPos) - offsetTop) / 700)*100;
+//     const scrollSection = document.querySelector('.scroll-section');
+//     animate(percentage, scrollSection);
+// });

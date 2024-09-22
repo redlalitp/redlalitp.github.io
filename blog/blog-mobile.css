@@ -33,15 +33,14 @@ section{
 }
 
 .sticky {
-    overflow: scroll;
+    overflow: hidden;
     position: sticky;
     top: 0;
     height: 100vh;
 }
 
 .sticky-parent {
-    /* change this value to adjust horizontal scroll */
-    height: 800vh;
+    height: 100vh;
 }
 
 .sticky-top-text {
@@ -51,16 +50,18 @@ section{
 }
 
 .scroll-section {
-    position: absolute;
+    /* position: absolute;
     top: 0;
-    left: 0%;
+    left: 0%; */
     height: 100%;
-    width: 850vw;
+    /* width: 850vw; */
+    width: max-content;
     will-change: transform;
     display: flex;
-    justify-content: space-evenly;
+    gap: 5vw;
+    justify-content: space-between;
     align-items: center;
-    padding: 0 5vw;
+    margin: 0 5vw;
     /* transform: translate(0%, -50%); */
 }
 
@@ -68,7 +69,7 @@ section{
     display: flex;
     flex-direction: column;
     justify-content: end;
-    width: 40vw;
+    width: 80vw;
     min-width: 200px;
     height: 40vh;
     min-height: 200px;
@@ -80,7 +81,7 @@ section{
     z-index: 1;
 }
 
-.img:hover {
+.img:hover, img:active {
     transform: scale(1.5);
     box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
     filter: grayscale(0);
