@@ -17,7 +17,7 @@ if(matchMedia('(hover: none)').matches) {
         const nextPercentage = Math.max(Math.min(nextPercentageInfinite, 0), -100);
         track.dataset.percentage = nextPercentage;
         //console.log(`mouseDelta: ${mouseDelta}`);
-        console.table({"mouseDelta": mouseDelta, "maxDelta": maxDelta, "percentage":percentage, "nextPercentageInfinite":nextPercentageInfinite, "nextPercentage":nextPercentage  });
+        //console.table({"mouseDelta": mouseDelta, "maxDelta": maxDelta, "percentage":percentage, "nextPercentageInfinite":nextPercentageInfinite, "nextPercentage":nextPercentage  });
 
         track.animate({
             transform : `translate(${nextPercentage}%)`
@@ -29,11 +29,13 @@ if(matchMedia('(hover: none)').matches) {
                 backgroundPosition : `${nextPercentage + 100}%  center`
             }, {duration:1200, fill: "forwards"})
         }
+        console.log(`touchmove: ${e.touches[0].clientX}`);
+        track.dataset.mouseDownAt = "0";
+        track.dataset.prevPercentage = track.dataset.percentage;
     }
 
     window.ontouchend = e => {
-        console.log(`touchend: ${e.touches[0]}`);
-        track.dataset.mouseDownAt = "0";
-        track.dataset.prevPercentage = track.dataset.percentage;
+        console.log(`touchend: ${e.changedTouches[0].clientX}`);
+        //track.dataset.mouseDownAt = "0";
     }
 }
