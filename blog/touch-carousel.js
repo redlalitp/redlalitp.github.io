@@ -3,6 +3,7 @@ if(matchMedia('(hover: none)').matches) {
 
     window.ontouchstart = e => {
         track.dataset.mouseDownAt = e.touches[0].clientX;
+        console.log(`touchstart: ${e.touches[0].clientX}`);
     }
 
     window.ontouchmove = e => {
@@ -31,6 +32,7 @@ if(matchMedia('(hover: none)').matches) {
     }
 
     window.ontouchend = e => {
+        console.log(`touchend: ${e.touches[0]}`);
         track.dataset.mouseDownAt = "0";
         track.dataset.prevPercentage = track.dataset.percentage;
     }
