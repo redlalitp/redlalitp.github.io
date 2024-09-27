@@ -34,10 +34,11 @@ images.forEach((img, idx) => {
     let title = document.createElement("div");
     title.className="name";
 
-    let text = document.createElement("div");
-    text.className="desc";
+    let text = document.createElement("pre");
+    text.className="des";
 
     let seeMoreBtn = document.createElement("button");
+    seeMoreBtn.textContent="See More";
 
 
     const postTitle = `title${idx+1}`;
