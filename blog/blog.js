@@ -8,22 +8,22 @@ let limitScroll = window.innerWidth > 800 ? 100 : 800;
 let horizontalScroll = true;
 
 let images = [
-    "assets/1.jpg",
-    "assets/2.jpg",
-    "assets/3.jpg",
-    "assets/4.jpg",
-    "assets/5.jpg",
-    "assets/6.jpg",
-    "assets/7.jpg",
-    "assets/8.jpg",
-    "assets/9.jpg",
-    "assets/10.jpg",
-    "assets/11.jpg",
-    "assets/12.jpg",
-    "assets/13.jpg",
-    "assets/14.jpg",
-    "assets/15.jpg",
-    "assets/16.jpg",
+    "../assets/blog-assets/1.jpg",
+    "../assets/blog-assets/2.jpg",
+    "../assets/blog-assets/3.jpg",
+    "../assets/blog-assets/4.jpg",
+    "../assets/blog-assets/5.jpg",
+    "../assets/blog-assets/6.jpg",
+    "../assets/blog-assets/7.jpg",
+    "../assets/blog-assets/8.jpg",
+    "../assets/blog-assets/9.jpg",
+    "../assets/blog-assets/10.jpg",
+    "../assets/blog-assets/11.jpg",
+    "../assets/blog-assets/12.jpg",
+    "../assets/blog-assets/13.jpg",
+    "../assets/blog-assets/14.jpg",
+    "../assets/blog-assets/15.jpg",
+    "../assets/blog-assets/16.jpg",
 ];
 
 images.forEach((img, idx) => {
