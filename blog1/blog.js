@@ -1,6 +1,7 @@
 let next = document.querySelector('.next');
 let prev = document.querySelector('.prev');
 let slide = document.querySelector('.slide');
+let showText = true;
 
 
 let images = [
@@ -34,6 +35,9 @@ images.forEach((img, idx) => {
     let title = document.createElement("div");
     title.className="name";
 
+    let date = document.createElement("div");
+    date.className="date";
+
     let text = document.createElement("pre");
     text.className="des";
 
@@ -43,12 +47,15 @@ images.forEach((img, idx) => {
 
     const postTitle = `title${idx+1}`;
     const postText = `text${idx+1}`;
+    const postDate = `date${idx+1}`;
     title.textContent = eval(postTitle);
     text.textContent = eval(postText);
+    date.textContent = eval(postDate);
 
-    content.appendChild(title, text, seeMoreBtn);
+    content.appendChild(title);
+    content.appendChild(date);
     content.appendChild(text);
-    content.appendChild(seeMoreBtn);
+    //content.appendChild(seeMoreBtn);
     
     image.appendChild(content);
 
@@ -68,3 +75,15 @@ prev.addEventListener('click', function(){
     let items = document.querySelectorAll('.item')
     document.querySelector('.slide').prepend(items[items.length - 1])
 })
+
+function hideText() {
+    const allTextx = document.querySelectorAll('.content');
+    if(showText) {
+        allTextx[1].style.display = "none";
+        showText = false
+    }
+    else {
+        allTextx[1].style.display = "flex";
+        showText = true
+    }
+}
