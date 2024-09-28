@@ -1,0 +1,240 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: #eaeaea;
+    overflow: hidden;
+}
+
+.container{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 1000px;
+    height: 600px;
+    background: #f5f5f5;
+    box-shadow: 0 2rem 3rem #dbdbdb;
+    font-family: "poppins";
+}
+
+.container .slide .item{
+    width: 10rem;
+    height: 10rem;
+    position: absolute;
+    top: 80%;
+    transform: translate(0, -50%);
+    border-radius: 2.2rem;
+    box-shadow: 0 2rem 3rem #505050;
+    background-position: 50% 50%;
+    background-size: cover;
+    display: inline-block;
+    transition: 0.5s;
+}
+
+.slide .item:nth-child(1),
+.slide .item:nth-child(2){
+    top: 0;
+    left: 0;
+    transform: translate(0, 0);
+    border-radius: 0;
+    width: 100%;
+    height: 100%;
+}
+
+
+.slide .item:nth-child(3){
+    left: 60%;
+}
+.slide .item:nth-child(4){
+    left: calc(60% + 11.25rem);
+}
+.slide .item:nth-child(5){
+    left: calc(60% + 22.5rem);
+}
+
+/* here n = 0, 1, 2, 3,... */
+.slide .item:nth-child(n + 6){
+    left: calc(60% + 33.75rem);
+    opacity: 0;
+}
+
+
+
+.item .content{
+    position: absolute;
+    top: 50%;
+    left: 3rem;
+    width: 50%;
+    text-align: left;
+    color: #eee;
+    transform: translate(0, -50%);
+    display: none;
+    height: 80%;
+    flex-direction: column;
+
+}
+
+
+.slide .item:nth-child(2) .content{
+    display: flex;
+}
+
+
+.content .name{
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    opacity: 0;
+    animation: animate 1s ease-in-out 1 forwards;
+    color: #ff6f00;
+}
+
+.date {
+    font-size: .7rem;
+    opacity: 0;
+    animation: animate 1s ease-in-out 1 forwards;
+    color: #fafafa;
+    text-shadow: 1px 1px 2px #000000, 1px 1px 2px #000000, 1px 1px 2px #000000;
+}
+
+.content .des{
+    margin-top: .5rem;
+    margin-bottom: 1rem;
+    opacity: 0;
+    animation: animate 1s ease-in-out 0.3s 1 forwards;
+    height: 25rem;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    overflow-y:scroll;
+    /* text-shadow: 1px 1px 2px #000000, 1px 1px 2px #000000, 1px 1px 2px #000000; */
+    line-height: 1.5rem;
+    font-size: 1rem;
+
+    /* frosted backdrop effect */
+    background: rgba(0, 0, 0, 0.15);
+    box-shadow: 0 .5rem 2rem 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 10px );
+    -webkit-backdrop-filter: blur( 10px );
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    border-radius: 1rem;
+    padding: 1rem;
+    color: whitesmoke;
+}
+
+.content button{
+    padding: .5rem 1rem;
+    border: none;
+    cursor: pointer;
+    opacity: 0;
+    animation: animate 1s ease-in-out 0.6s 1 forwards;
+    width: fit-content;
+}
+
+
+@keyframes animate {
+    from{
+        opacity: 0;
+        transform: translate(0, 6rem);
+        filter: blur(2rem);
+    }
+
+    to{
+        opacity: 1;
+        transform: translate(0);
+        filter: blur(0);
+    }
+}
+
+
+
+.button{
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    bottom: 1rem;
+}
+
+.button button{
+    color: #ff6f00;
+    width: 2.5rem;
+    height: 2rem;
+    border-radius: .5rem;
+    border: none;
+    cursor: pointer;
+    margin: 0 .5rem;
+    border: 1px solid #ff6f00;
+    transition: 0.3s;
+    background: none;
+}
+
+.button button:hover{
+    background: #ff6f00;
+    color: #272727;
+}
+
+.toggle-text-bttn {
+    position: absolute;
+    top: 10%;
+    right: 10%;
+    /* opacity: 60%; */
+    height: 2.5rem;  
+    width: 2.5rem;
+    z-index: 5;
+    border: 0;
+    cursor: pointer;
+    background: none;
+    border-radius: 50%;
+    background-color: #272727;
+
+    img{
+        height: 2rem;
+        width: 2rem;
+        transform: rotate(0deg);
+        transition: transform 1s;
+    }
+
+}
+
+.toggle-text-bttn:hover {
+    img {
+        transform: rotate(180deg);
+    }
+}
+
+.view-photo-text {
+    font-family: "poppins";
+    font-size: .8rem;
+    color: #272727;
+    animation: animate-text 3s ease-in-out infinite backwards;
+    animation-play-state: paused;
+    position: absolute;
+    top: 18%;
+    right: 8%;
+    z-index: 5;
+    opacity: 0;
+}
+
+@keyframes animate-text {
+    from{
+        color: rgb(255, 115, 0);
+    }
+
+    to{
+        color: rgb(133, 57, 0);
+    }
+}
+
+.container:has(.toggle-text-bttn:hover) .view-photo-text {
+    animation-play-state: running;
+    opacity: 70%;
+}
+
+.hide {
+    display: none;
+}
