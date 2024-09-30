@@ -85,14 +85,31 @@ body{
     display: flex;
 }
 
+.backdrop {
+    /* frosted backdrop effect */
+    background: rgba(0, 0, 0, 0.15);
+    box-shadow: 0 .5rem 2rem 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 10px );
+    -webkit-backdrop-filter: blur( 10px );
+    /* border: 1px solid rgba( 255, 255, 255, 0.18 ); */
+    border-radius: 1rem;
+    padding: 1rem;
+    color: whitesmoke;
+}
 
 .content .name{
     font-size: 2.5rem;
-    text-transform: uppercase;
-    font-weight: bold;
+    font-weight:500;
     opacity: 0;
     animation: animate 1s ease-in-out 1 forwards;
     color: #ff6f00;
+}
+
+.title-area {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    animation: animate 1s ease-in-out 1 forwards;
 }
 
 .date {
@@ -100,31 +117,19 @@ body{
     opacity: 0;
     animation: animate 1s ease-in-out 1 forwards;
     color: #fafafa;
-    text-shadow: 1px 1px 2px #000000, 1px 1px 2px #000000, 1px 1px 2px #000000;
 }
 
 .content .des{
     margin-top: .5rem;
     margin-bottom: 1rem;
     opacity: 0;
-    animation: animate 1s ease-in-out 0.3s 1 forwards;
+    animation: animate 2s ease-in-out 0.3s 1 forwards;
     height: 25rem;
     white-space: pre-wrap;
     word-wrap: break-word;
     overflow-y:scroll;
-    /* text-shadow: 1px 1px 2px #000000, 1px 1px 2px #000000, 1px 1px 2px #000000; */
     line-height: 1.5rem;
-    font-size: 1rem;
-
-    /* frosted backdrop effect */
-    background: rgba(0, 0, 0, 0.15);
-    box-shadow: 0 .5rem 2rem 0 rgba( 31, 38, 135, 0.37 );
-    backdrop-filter: blur( 10px );
-    -webkit-backdrop-filter: blur( 10px );
-    border: 1px solid rgba( 255, 255, 255, 0.18 );
-    border-radius: 1rem;
-    padding: 1rem;
-    color: whitesmoke;
+    font-size: .8rem;
 }
 
 .content button{
@@ -165,7 +170,6 @@ body{
     width: 2.5rem;
     height: 2rem;
     border-radius: .5rem;
-    border: none;
     cursor: pointer;
     margin: 0 .5rem;
     border: 1px solid #ff6f00;
@@ -180,17 +184,8 @@ body{
 
 .toggle-text-bttn {
     position: absolute;
-    top: 10%;
-    right: 10%;
-    /* opacity: 60%; */
-    height: 2.5rem;  
-    width: 2.5rem;
-    z-index: 5;
-    border: 0;
-    cursor: pointer;
-    background: none;
-    border-radius: 50%;
-    background-color: #272727;
+    left: 25%;
+    border: 0 !important;
 
     img{
         height: 2rem;
@@ -207,36 +202,24 @@ body{
     }
 }
 
-.view-photo-text {
-    font-family: "poppins";
-    font-size: .8rem;
-    color: #272727;
-    animation: animate-text 3s ease-in-out infinite backwards;
-    animation-play-state: paused;
-    position: absolute;
-    top: 18%;
-    right: 8%;
-    z-index: 5;
-    opacity: 0;
-}
-
-@keyframes animate-text {
-    from{
-        color: rgb(255, 115, 0);
-    }
-
-    to{
-        color: rgb(133, 57, 0);
-    }
-}
-
-.container:has(.toggle-text-bttn:hover) .view-photo-text {
-    animation-play-state: running;
-    opacity: 70%;
-}
-
 .hide {
     display: none;
+}
+
+.home-button{
+    position: absolute;
+    left: 5%;
+    width: fit-content !important;
+    a {
+        color: #eee;
+        text-decoration: none;
+        padding: 0 0.5rem;
+    }
+}
+
+.nav-area a{
+    text-decoration: none;
+    color: #eee;
 }
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
@@ -244,14 +227,30 @@ body{
         width: 100vw;
         height: 100vh;
         font-family: "poppins";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        background: #f5f5f5;
+        box-shadow: none;
     }
     .item .content{
         left: 1rem;
         width: 90%;
         height: 80%;
         flex-direction: column;
-    
+        box-shadow:none;
+        position: absolute;
+        top: 0;
+        text-align: left;
+        color: #eee;
+        transform: translate(0, 0);
+        display: none;
     }
+
+    .title-area {
+        margin-top: 1rem;
+    }
+
     .content .des{
         height: 70%;
     }
@@ -260,14 +259,14 @@ body{
         width: 5rem;
         height: 5rem;
         position: absolute;
-        top: 85%;
-        transform: translate(0, -50%);
+        top: 80%;
         border-radius: 1rem;
-        box-shadow: 0 2rem 3rem #505050;
         background-position: 50% 50%;
         background-size: cover;
         display: inline-block;
         transition: 0.5s;
+        transform: translate(0, 0);
+        box-shadow: none;
     }
     
     .slide .item:nth-child(1),
@@ -287,13 +286,10 @@ body{
     .slide .item:nth-child(4){
         left: calc(50% + 6rem);
     }
-    .slide .item:nth-child(5){
-        left: calc(50% + 12rem);
-    }
     
     /* here n = 0, 1, 2, 3,... */
-    .slide .item:nth-child(n + 6){
-        left: calc(60% + 33.75rem);
+    .slide .item:nth-child(n + 5){
+        left: calc(50% + 6rem);
         opacity: 0;
     }
 

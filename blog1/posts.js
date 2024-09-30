@@ -13,17 +13,13 @@ const date1 = `1st April 2023`;
 
 const title2 = `अश्रूंचा प्रवास`;
 const text2 = `घट्ट शिवलेल्या ओठांनी दाबून, 
-
 हुंद्क्याचेही रूप नं घेऊ दिलेल्या शब्दांनी शेवटी अश्रूंशीच मैत्री केलीये,
-
 
 गच्च मिटलेल्या डोळ्यातून, 
 सैरभैर मनाच्या कर्कश कल्लोळातून, निसटून धावायची अश्रूंना घाई झालीये,
 
-
 नाही ओळखणार 'ते' तुम्हाला, हे अश्रूंना नाही कळत, 
 जगाच्या हिरव्या चष्म्यातून तुझा इंद्रधनुष्य नाही दिसत,
-
 
 शब्दांना नं उमगणारं कोडं, हलकेच कवटाळून, 
 ओल्या पापण्यांनी, उबेच्या मायेसव, अश्रूंना वाट मोकळी केलीये! `;
@@ -54,7 +50,7 @@ const text3 = `वादळात विस्कटलेले फूल ह�
 const date3 = `26th April 2022`;
 
 const title4 = 'The thing called happiness!';
-const text4 = `Year 2009, early February, beautiful, cool, pleasant mornings, was in Pune for almost 7 months at that time. Movie Dev D was released, went for the show. We were students so multiplexes were out of budget, watched it in Nilayam theater. I think the ticket was 40 Rs. Obviously we loved the movie, it was rebellious, exactly opposite to what something Sanjay Leela Bhansali could visualize, churn out, and something is signature Anurag Kashyap work, equally good execution with character arcs parallel to original in completely different realm. Music was the star, all songs in album were fresh, well placed, paced, relevant and surprisingly not involving A R Rehman. Kudos Amit Trivedi, been an admirer since. I doubt any of the Indian persons reading this has not watched this movie but if you haven't I would recommend emphatically. If you really want a good experience watch 2002 film Devdas by SLB (This Shahrukh Khan, where are you?) before watching Dev D. And if you have time and admiration for period dramas, read the novel these movies are based on with same name by Sarat Chandra Chattopadhyay. By the way there are 20+ movie adaptations of this novel.
+const text4 = ` Year 2009, early February, beautiful, cool, pleasant mornings, was in Pune for almost 7 months at that time. Movie Dev D was released, went for the show. We were students so multiplexes were out of budget, watched it in Nilayam theater. I think the ticket was 40 Rs. Obviously we loved the movie, it was rebellious, exactly opposite to what something Sanjay Leela Bhansali could visualize, churn out, and something is signature Anurag Kashyap work, equally good execution with character arcs parallel to original in completely different realm. Music was the star, all songs in album were fresh, well placed, paced, relevant and surprisingly not involving A R Rehman. Kudos Amit Trivedi, been an admirer since. I doubt any of the Indian persons reading this has not watched this movie but if you haven't I would recommend emphatically. If you really want a good experience watch 2002 film Devdas by SLB (This Shahrukh Khan, where are you?) before watching Dev D. And if you have time and admiration for period dramas, read the novel these movies are based on with same name by Sarat Chandra Chattopadhyay. By the way there are 20+ movie adaptations of this novel.
 
           One of the songs in Dev D movie, 'Kaha chali gayi hai sali khushi' takes movie through dark period in Devs life. The protagonist thankfully has not shown lip syncing these words in song, not breaking the realistic nature of Dev D world. The song, as per my interpretation shows glimpse of what thoughts might be going through Devs mind. He is wondering, wandering, lost and thinking where has the damn happiness gone? Okay, changing lanes, where does happiness go? does it go anywhere or its there and not accessible? or not compatible with current situation? Is it the case of tight coupling your happiness to places, persons, particular setting?
 
@@ -86,18 +82,18 @@ const date5 = `20th March 2021`;
 const title6 = `भाषांतर`;
 const text6 = ` 
 
-कसे रचावे शब्द मांडतील जे मनातलं काहीच बाकी नं ठेवता,
- उमटतील उष्वास ही, कारण सांगतात अर्धी गोष्ट हे श्वासच, 
-कधी दीर्घ तर कधी उसंत ही ना मिळू देत हृदयाला धडधडवणारे, 
-आणि हलकेच हृदयाचा ठोका चुकवणारे क्षण. 
-पण करतील का शब्द व्यक्त? घेतील का अक्षरं ते रूप, 
-त्या अंगावरच्या काट्याचं, गिळलेल्या अवंढ्याच, 
-जिभेवर असलेल्या त्या चवीचं जे क्षणांत नेतंय हजारो मैल दूर... 
-संवादासाठी भाषा, भाषेचे शब्द, उच्चारांची कसरत, 
-सोडवतील का गुंता विचारांची?  प्रतिमा च जशी मनाची? 
-होईल का भाषांतर हव तसं, 
-'माझं, मी', समजेल का 'त्याचं, तो' आणि 'तिची ती'? 
-भाषांतर पापणीचं, नजरेतलं, असलेल्या हसूचं आणि नसलेल्या अश्रुंच?
+    कसे रचावे शब्द मांडतील जे मनातलं काहीच बाकी नं ठेवता,
+    उमटतील उष्वास ही, कारण सांगतात अर्धी गोष्ट हे श्वासच, 
+    कधी दीर्घ तर कधी उसंत ही ना मिळू देत हृदयाला धडधडवणारे, 
+    आणि हलकेच हृदयाचा ठोका चुकवणारे क्षण. 
+    पण करतील का शब्द व्यक्त? घेतील का अक्षरं ते रूप, 
+    त्या अंगावरच्या काट्याचं, गिळलेल्या अवंढ्याच, 
+    जिभेवर असलेल्या त्या चवीचं जे क्षणांत नेतंय हजारो मैल दूर... 
+    संवादासाठी भाषा, भाषेचे शब्द, उच्चारांची कसरत, 
+    सोडवतील का गुंता विचारांची?  प्रतिमा च जशी मनाची? 
+    होईल का भाषांतर हव तसं, 
+    'माझं, मी', समजेल का 'त्याचं, तो' आणि 'तिची ती'? 
+    भाषांतर पापणीचं, नजरेतलं, असलेल्या हसूचं आणि नसलेल्या अश्रुंच?
 
 
 

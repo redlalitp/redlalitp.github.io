@@ -32,6 +32,9 @@ images.forEach((img, idx) => {
     let content = document.createElement("div");
     content.className = "content";
 
+    let titleArea = document.createElement("div");
+    titleArea.className = "title-area backdrop";
+
     let title = document.createElement("div");
     title.className="name";
 
@@ -39,11 +42,10 @@ images.forEach((img, idx) => {
     date.className="date";
 
     let text = document.createElement("pre");
-    text.className="des";
+    text.className="des backdrop";
 
-    let seeMoreBtn = document.createElement("button");
-    seeMoreBtn.textContent="See More";
-
+    titleArea.appendChild(title);
+    titleArea.appendChild(date);
 
     const postTitle = `title${idx+1}`;
     const postText = `text${idx+1}`;
@@ -52,8 +54,8 @@ images.forEach((img, idx) => {
     text.textContent = eval(postText);
     date.textContent = eval(postDate);
 
-    content.appendChild(title);
-    content.appendChild(date);
+    content.appendChild(titleArea);
+    // content.appendChild(date);
     content.appendChild(text);
     //content.appendChild(seeMoreBtn);
     
