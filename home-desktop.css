@@ -42,6 +42,7 @@ html{
     background-image: url("assets/main-tp.png");
     background-size:cover;
     /* filter : grayscale(100%); */
+    user-select: none;
 }
 
 .main-img {
