@@ -131,6 +131,18 @@ body{
     line-height: 1.5rem;
     font-size: .8rem;
 }
+::-webkit-scrollbar
+{
+    width: 0.8rem;  /* for vertical scrollbars */
+}
+::-webkit-scrollbar-track
+{
+    background: rgba(2, 2, 2, 0.2);
+}
+::-webkit-scrollbar-thumb
+{
+    background: rgb(26, 26, 26);
+}
 
 .content button{
     padding: .5rem 1rem;
@@ -221,6 +233,8 @@ body{
     text-decoration: none;
     color: #eee;
 }
+
+
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
     .container{
