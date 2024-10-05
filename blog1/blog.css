@@ -234,6 +234,53 @@ body{
     color: #eee;
 }
 
+.image-meta-container {
+    position: absolute;
+    left: 5%;
+    bottom: 10%;
+    display: none;
+    height: fit-content;
+    flex-direction: column;
+    gap: 0.2rem;
+
+    a{
+        text-decoration: none;
+    }
+}
+
+.image-meta-location{
+    font-size: 0.8rem;
+    font-weight: 500;
+    color:#ff6f00;
+}
+
+.location-icon {
+    height: 1rem;
+    padding: 0 0.7rem;
+    transition: rotate 1s;
+
+    :hover {
+        rotate: 360deg;
+    }
+}
+
+.image-meta-device {
+    color: #dbdbdb;
+    font-size: 0.6rem;
+}
+
+.image-meta-details {
+    display: flex;
+    gap: 1rem;
+    color: #eaeaea;
+    font-size: 0.6rem;
+}
+
+.image-meta-date{
+    color: #f5f5f5;
+    font-size: 0.6rem;
+}
+
 
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
@@ -324,6 +371,10 @@ body{
         box-shadow: 0 .5rem 2rem 0 rgba( 31, 38, 135, 0.37 );
         backdrop-filter: blur( 20px );
         -webkit-backdrop-filter: blur( 10px );
+    }
+
+    .image-meta-container {
+        display: none;
     }
     
   }
