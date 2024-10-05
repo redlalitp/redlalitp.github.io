@@ -7,7 +7,8 @@
 }
 
 body{
-    background: #fbc500;
+    /* background: #fbc500; */
+    background-color: #ffffff;
     overflow: hidden;
 }
 
@@ -71,6 +72,7 @@ body{
     background: none;
     box-shadow: none;
     border-radius: 5px;
+    outline-color: #fbc500;
 }
 
 .flat-button {
@@ -80,8 +82,10 @@ body{
     color: #191919;
     padding: 0 1rem;
     height: 1.5rem;
-    width: 300px;
+    width: 100%;
     float: right;
+    cursor: pointer;
+    font-weight: bold;
 }
 
 .name-area{
