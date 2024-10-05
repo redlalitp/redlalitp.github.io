@@ -1,5 +1,6 @@
 let next = document.querySelector('.next');
 let prev = document.querySelector('.prev');
+let home = document.querySelector('.home-button');
 let slide = document.querySelector('.slide');
 
 let showText = true;
@@ -135,7 +136,7 @@ next.addEventListener('click', function () {
     items[2].classList.add('active');
     hideContent(items[1]);
     showText = false;
-    hideText();
+    hideText(true);
 })
 
 prev.addEventListener('click', function () {
@@ -146,7 +147,7 @@ prev.addEventListener('click', function () {
     items[2].classList.remove('active');
     hideContent(items[2]);
     showText = false;
-    hideText();
+    hideText(true);
 })
 
 function hideContent(item) {
@@ -154,23 +155,65 @@ function hideContent(item) {
     item.querySelector('.image-meta-container').style.display = 'none';
 }
 
-function hideText() {
+function hideText(navigating) {
     if (fullSitePossible) {
         let items = document.querySelectorAll('.item')
         items[1].classList.add('active');
         const activeItem = document.querySelector('.active');
         const imageMeta = document.querySelectorAll(".image-meta-container")[1];
+        
         if (showText) {
             activeItem.querySelector('.content').style.display = 'none';
+
+            if(!navigating) {
+                Array.from(items).slice(2, 5).forEach(item => {
+                    item.classList.add("shrink");
+                
+                })
+
+                // items.forEach(item => {
+                //     item.style.height = "0rem";
+                // })
+            }
+
             imageMeta.style.display = "flex";
+            hideButtons();
             showText = false
         }
         else {
             activeItem.querySelector('.content').style.display = 'flex';
             imageMeta.style.display = "none";
+
+            if(!navigating) {
+                Array.from(items).slice(2, 5).forEach(item => {
+                    item.classList.remove("shrink");
+                
+                })
+                // items[2].style.left = "60%";
+                // items[3].style.left = "calc(60% + 11.25rem)";
+                // items[4].style.left = "calc(60% + 22.5rem)";
+
+                // items.forEach(item => {
+                //     item.style.height = "10rem";
+                // })
+            }
+
+            showButtons();
             showText = true;
         }
     }
+}
+
+function hideButtons() {
+    next.style.opacity = 0;
+    prev.style.opacity = 0;
+    home.style.opacity = 0;
+}
+
+function showButtons() {
+    next.style.opacity = 1;
+    prev.style.opacity = 1;
+    home.style.opacity = 1;
 }
 
 

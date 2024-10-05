@@ -236,12 +236,13 @@ body{
 
 .image-meta-container {
     position: absolute;
-    left: 5%;
-    bottom: 10%;
+    left: 1%;
+    bottom: 1%;
     display: none;
     height: fit-content;
+    width: 15rem;
     flex-direction: column;
-    gap: 0.2rem;
+    gap: 0.4rem;
 
     a{
         text-decoration: none;
@@ -271,14 +272,18 @@ body{
 
 .image-meta-details {
     display: flex;
-    gap: 1rem;
+    flex-direction: column;
     color: #eaeaea;
     font-size: 0.6rem;
 }
 
 .image-meta-date{
-    color: #f5f5f5;
+    color: #a8a8a8;
     font-size: 0.6rem;
+}
+
+.shrink {
+    height: 0 !important;
 }
 
 
