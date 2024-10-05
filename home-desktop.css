@@ -43,6 +43,7 @@ html{
     background-size:cover;
     /* filter : grayscale(100%); */
     user-select: none;
+    background-position: center;
 }
 
 .main-img {
@@ -212,6 +213,82 @@ html{
         transform: rotate(-25deg);
         left: 45%;
         top: 28%;
+    }
+}
+
+@media only screen and (min-device-width: 500px) and (max-device-width: 1200px) {
+
+    .container {
+        background-image: url("assets/main-tp-tab.png");
+        background-position: right top;
+    }
+    
+    .pen-image {
+        bottom: -11%;
+        left: 135%;
+        height: 100%;
+        width: 56%;
+    }
+    
+    .pen-image:hover {
+        filter: drop-shadow(0.35rem 0.35rem 0.4rem #ffee10);
+        cursor: pointer;
+    }
+    
+    .blog-link {
+        font-family: "kalam-light";
+        font-size: 3rem;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        top:10%;
+        left: 6%;
+        background: url(assets/text-bg.jpg);
+        width: fit-content;
+        background-size:contain;
+        padding-top: 2rem;
+        -webkit-background-clip: text;
+        background-clip: text;
+        padding-left: 0;
+        
+    }
+    
+    .text1 {
+        text-decoration: none;
+        -webkit-text-fill-color: transparent;
+    }
+    
+    .text2 {
+        color:hsla(0 0% 100% / 0.8);
+        text-decoration: none;
+        position: relative;
+        top: -1.5rem;
+        left: 3rem;
+        background: url(assets/text-bg.jpg);
+        background-size:contain;
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-position: center;
+    }
+    
+    .text1:hover {
+        text-shadow: 0 0 3px #ffee10;
+    }
+    
+    .text2:hover {
+        text-shadow: 0 0 3px #ffee10;
+    }
+    
+    .hero-text-area {
+        width: 20vw;
+        font-size: 3rem;
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 19%;
+        left: 40%;
+        opacity: 0%;
     }
 }
 

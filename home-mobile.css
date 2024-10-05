@@ -227,6 +227,11 @@ html{
     }
 }
 
+.suggestion-text {
+    font-size: 1rem;
+    color: rgba(0,0,0,0.5);   
+}
+
 /* text animations */
 
 /* .load-text-animation {
