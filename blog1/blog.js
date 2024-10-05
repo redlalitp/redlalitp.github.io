@@ -84,6 +84,7 @@ function getImageMeta(index) {
     elLocationName.textContent = eval(`metaLocation${index + 1}`);
     let elLocationMap = document.createElement("a");
     elLocationMap.href = eval(`metaMap${index + 1}`);
+    elLocationMap.target = "_blank";
     let elLocIcon = document.createElement("img");
     elLocIcon.className = "location-icon";
     elLocIcon.src = "../assets/location.png";
@@ -108,6 +109,10 @@ function getImageMeta(index) {
     elDate.className = "image-meta-date";
     elDate.textContent = imageMetaData.CreateDate;
 
+    const infoButton = document.createElement("button");
+    infoButton.className = "info-button";
+    infoButton.id = "info-button";
+
 
     elLocation.appendChild(elLocationName);
     elLocation.appendChild(elLocationMap);
@@ -121,6 +126,7 @@ function getImageMeta(index) {
     el.appendChild(elDevice);
     el.appendChild(elDetails);
     el.appendChild(elDate);
+    el.appendChild(infoButton);
 
     return el;
 
@@ -157,10 +163,16 @@ function hideContent(item) {
 
 function hideText(navigating) {
     if (fullSitePossible) {
+        infoState = false;
+        infoButtonAction();
+
         let items = document.querySelectorAll('.item')
         items[1].classList.add('active');
         const activeItem = document.querySelector('.active');
         const imageMeta = document.querySelectorAll(".image-meta-container")[1];
+
+        let infoButton = imageMeta.querySelector('#info-button');
+        infoButton.addEventListener("click", infoButtonAction);
         
         if (showText) {
             activeItem.querySelector('.content').style.display = 'none';
@@ -198,7 +210,7 @@ function hideText(navigating) {
                 // })
             }
 
-            showButtons();
+            showButtons();  
             showText = true;
         }
     }
@@ -206,14 +218,21 @@ function hideText(navigating) {
 
 function hideButtons() {
     next.style.opacity = 0;
+    next.style.pointerEvents = "none";
     prev.style.opacity = 0;
+    prev.style.pointerEvents = "none";
     home.style.opacity = 0;
+    home.style.pointerEvents = "none";
 }
+
 
 function showButtons() {
     next.style.opacity = 1;
+    next.style.pointerEvents = "auto";
     prev.style.opacity = 1;
+    prev.style.pointerEvents = "auto";
     home.style.opacity = 1;
+    home.style.pointerEvents = "auto";
 }
 
 
@@ -224,3 +243,31 @@ function fullSitePossible() {
         return false;
     }
 }
+
+let infoState = false;
+
+
+
+function infoButtonAction(){
+    const imageMeta = document.querySelectorAll(".image-meta-container")[1];
+    let infoButton = imageMeta.querySelector('#info-button');
+
+    if(infoState) {
+        infoButton.classList.add("info-button-info");
+        infoButton.classList.remove("info-button-minus");
+        imageMeta.querySelector(".image-meta-location").style.display = "none";
+        imageMeta.querySelector(".image-meta-details").style.display = "none";
+        imageMeta.querySelector(".image-meta-device").style.display = "none";
+        imageMeta.querySelector(".image-meta-date").style.display = "none";
+        infoState = false;
+    }
+    else {
+        infoButton.classList.add("info-button-minus");
+        infoButton.classList.remove("info-button-info");
+        imageMeta.querySelector(".image-meta-location").style.display = "block";
+        imageMeta.querySelector(".image-meta-details").style.display = "flex";
+        imageMeta.querySelector(".image-meta-device").style.display = "block";
+        imageMeta.querySelector(".image-meta-date").style.display = "block";
+        infoState = true;
+    }
+};
