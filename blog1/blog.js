@@ -2,8 +2,13 @@ let next = document.querySelector('.next');
 let prev = document.querySelector('.prev');
 let home = document.querySelector('.home-button');
 let slide = document.querySelector('.slide');
+let lightsOutBttn = document.querySelector('.lights-out');
 
 let showText = true;
+
+let lightsOut = false;
+
+lightsOutAction();
 
 let images = [
     "../assets/blog-assets/1.jpg",
@@ -29,6 +34,9 @@ images.forEach((img, idx) => {
     image.style.backgroundImage = `url(${img})`;
     //image.draggable = false;
     image.className = "item";
+
+    let darkLayer = document.createElement("div");
+    darkLayer.className = "dark-layer";
 
 
     let imageMeta = getImageMeta(idx);
@@ -63,8 +71,10 @@ images.forEach((img, idx) => {
     content.appendChild(text);
     //content.appendChild(seeMoreBtn);
 
-    image.appendChild(content);
-    image.appendChild(imageMeta);
+    darkLayer.appendChild(content);
+    darkLayer.appendChild(imageMeta);
+
+    image.appendChild(darkLayer);
 
     slide.appendChild(image);
 })
@@ -132,6 +142,31 @@ function getImageMeta(index) {
 
 }
 
+
+lightsOutBttn.addEventListener('click', lightsOutAction);
+
+function lightsOutAction() {
+    let darkLayers = document.querySelectorAll('.dark-layer');
+    let image = document.querySelector('.light-mode-img');
+    if(lightsOut) {
+        image.src = "../assets/light-mode.png";
+        darkLayers.forEach(item => {
+            item.style.backgroundColor = 'rgba(0, 0, 0, 0.8)';
+            
+        });
+        document.body.style.backgroundColor = 'rgba(0, 0, 0, 0.9)';
+        
+        lightsOut = false
+        
+    } else {
+        image.src = "../assets/dark-mode.png";
+        darkLayers.forEach(item => {
+            item.style.backgroundColor = 'rgba(0, 0, 0, 0)';
+        });
+        document.body.style.backgroundColor = 'rgba(0, 0, 0, 0)';
+        lightsOut = true;
+    }
+}
 
 
 

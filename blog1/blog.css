@@ -23,6 +23,11 @@ body{
     font-family: "poppins";
 }
 
+.dark-layer {
+    height: 100%;
+    width: 100%;
+}
+
 .container .slide .item{
     width: 10rem;
     height: 10rem;
@@ -259,6 +264,18 @@ body{
         img {
             transform: scale(125%);
         }
+    }
+}
+
+.lights-out {
+    position: absolute;
+    left: 15%;
+    width: fit-content !important;
+    border: 0 !important;
+    padding: 0 0.5rem;
+
+    img {
+        height: 1.5rem;
     }
 }
 
