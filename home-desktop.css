@@ -74,7 +74,6 @@ html{
 
 .pen-image:hover {
     filter: drop-shadow(0.35rem 0.35rem 0.4rem #ffee10);
-    cursor: pointer;
 }
 
 .blog-link {
