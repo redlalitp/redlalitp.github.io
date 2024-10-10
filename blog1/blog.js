@@ -210,6 +210,15 @@ function hideText(navigating) {
         infoButton.addEventListener("click", infoButtonAction);
         
         if (showText) {
+
+            //hide darkmode button, we dont need that here.
+            lightsOutBttn.style.display = "none";
+
+            //if its dark mode, switch it to light mode.
+            if(!lightsOut) {
+                lightsOutAction();
+            }
+
             activeItem.querySelector('.content').style.display = 'none';
 
             if(!navigating) {
@@ -217,10 +226,6 @@ function hideText(navigating) {
                     item.classList.add("shrink");
                 
                 })
-
-                // items.forEach(item => {
-                //     item.style.height = "0rem";
-                // })
             }
 
             imageMeta.style.display = "flex";
@@ -228,6 +233,7 @@ function hideText(navigating) {
             showText = false
         }
         else {
+            lightsOutBttn.style.display = "flex";
             activeItem.querySelector('.content').style.display = 'flex';
             imageMeta.style.display = "none";
 
@@ -236,13 +242,6 @@ function hideText(navigating) {
                     item.classList.remove("shrink");
                 
                 })
-                // items[2].style.left = "60%";
-                // items[3].style.left = "calc(60% + 11.25rem)";
-                // items[4].style.left = "calc(60% + 22.5rem)";
-
-                // items.forEach(item => {
-                //     item.style.height = "10rem";
-                // })
             }
 
             showButtons();  
