@@ -43,7 +43,7 @@ html{
     background-size:cover;
     /* filter : grayscale(100%); */
     user-select: none;
-    background-position: center;
+    background-position: center top;
 }
 
 .main-img {
