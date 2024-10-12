@@ -28,11 +28,10 @@ body{
 
 .form {
     position: absolute;
-    top: 50%;
+    top: 55%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 500px;
-    height: 400px;
+    width: 60%;
 
     color: #fbc500;
 
@@ -139,6 +138,18 @@ body{
     }
 }
 
+.backdrop {
+    /* frosted backdrop effect */
+    background: rgba(0, 0, 0, 0.297);
+    box-shadow: 0 .5rem 2rem 0 rgba(112, 112, 112, 0.468);
+    backdrop-filter: blur( 10px );
+    -webkit-backdrop-filter: blur( 10px );
+    /* border: 1px solid rgba( 255, 255, 255, 0.18 ); */
+    border-radius: 1rem;
+    padding: 1rem;
+    color:#fbc500;
+}
+
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
     .container{
         position: relative;
@@ -173,7 +184,7 @@ body{
             font-weight: bold;
         }
 
-        background-color: rgba(0, 0, 0, 0.8);
+        background-color: rgba(0, 0, 0, 0.6);
 
         padding: 1rem;
     
