@@ -182,7 +182,7 @@ body{
             font-size: 1rem;
             line-height: 1.5rem;
             padding-left: 0.5rem;
-            min-width: 300px;
+            min-width: 90%;
             color: black;
             background: rgba(250, 196, 5, 0.7);
         }
@@ -194,17 +194,20 @@ body{
             line-height: 1.5rem;
             padding-left: 0.5rem;
             min-height: 200px;
-            min-width: 300px;
+            min-width: 90%;
             color: black;
         }
     }
     
     .nav-bar {
         position: absolute;
+        top: auto;
+        left: auto;
         bottom: 5%;
         display: flex;
         justify-content: center;
         width: 100%;
+        height: fit-content;
         gap: 2rem;
     
         a {
@@ -218,10 +221,7 @@ body{
             img {
                 width: 2rem;
                 margin-right: 0.5rem;
-            }
-    
-            :hover {
-                transform: scale(150%);
+                opacity: 1;
             }
         }
     }
