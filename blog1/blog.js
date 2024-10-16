@@ -170,7 +170,9 @@ function lightsOutAction() {
 
 
 
-next.addEventListener('click', function () {
+next.addEventListener('click', nextKeyAction);
+
+function nextKeyAction() {
     let items = document.querySelectorAll('.item')
     document.querySelector('.slide').appendChild(items[0])
     items[1].classList.remove('active');
@@ -178,9 +180,11 @@ next.addEventListener('click', function () {
     hideContent(items[1]);
     showText = false;
     hideText(true);
-})
+}
 
-prev.addEventListener('click', function () {
+prev.addEventListener('click', prevKeyAction);
+
+function prevKeyAction() {
     let items = document.querySelectorAll('.item')
     document.querySelector('.slide').prepend(items[items.length - 1]);
     items = document.querySelectorAll('.item');
@@ -189,7 +193,7 @@ prev.addEventListener('click', function () {
     hideContent(items[2]);
     showText = false;
     hideText(true);
-})
+}
 
 function hideContent(item) {
     item.querySelector('.content').style.display = 'none';
@@ -305,3 +309,18 @@ function infoButtonAction(){
         infoState = true;
     }
 };
+
+
+document.addEventListener('keydown', (event) => {
+    if (fullSitePossible && showText) {
+        if (event.key === 'ArrowRight') {
+
+            console.log('Right arrow key pressed!'); 
+            nextKeyAction();
+        }
+        if (event.key === 'ArrowLeft') {
+            console.log('Right arrow key pressed!'); 
+            prevKeyAction();
+        }
+    }
+  });
