@@ -3,6 +3,8 @@ let prev = document.querySelector('.prev');
 let home = document.querySelector('.home-button');
 let slide = document.querySelector('.slide');
 let lightsOutBttn = document.querySelector('.lights-out');
+let buttonArea = document.querySelector('.button');
+let actionButtonArea = document.querySelector('.action-buttons');
 
 let showText = true;
 
@@ -232,6 +234,9 @@ function hideText(navigating) {
                 })
             }
 
+            buttonArea.classList.remove("backdrop");
+            actionButtonArea.classList.add("backdrop");
+
             imageMeta.style.display = "flex";
             hideButtons();
             showText = false
@@ -247,6 +252,9 @@ function hideText(navigating) {
                 
                 })
             }
+
+            buttonArea.classList.add("backdrop");
+            actionButtonArea.classList.remove("backdrop");
 
             showButtons();  
             showText = true;
