@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap');
+
 .tillana-regular {
     font-family: "Tillana", system-ui;
     font-weight: 400;
@@ -5,7 +7,7 @@
 }
 
 .kalam-light {
-    font-family: "Kalam", cursive;
+    font-family: "Kalam";
     font-weight: 300;
     font-style: normal;
 }
@@ -77,7 +79,7 @@ html{
 }
 
 .blog-link {
-    font-family: "kalam-light";
+    font-family: "kalam";
     font-size: 4rem;
     display: flex;
     flex-direction: column;
